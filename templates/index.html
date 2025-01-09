@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+    <main>
+        <div class="caruselWelcome">
+            <div class="headerCarusel">
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <!-- ----------------------------------- -->
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img src="{% static 'media/sample-1.jpg' %}" alt="">
+                    </div>
+                </div>
+                <!-- ----------------------------------- -->
+            </div>
+            <div class="caruselBottom">
+                <div class="img">
+                    <img src="{% static 'media/bottom.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="blogHead">
+            <p class="txt">
+                <span>Ən çox satılanlar</span>
+            </p>
+        </div>
+        <div class="bestSellers">
+            {% for post in products %}
+                <div class="cardBlock">
+                    <div class="img">
+                        <img src="{{post.img}}" alt="">
+                    </div>
+                    <div class="info">
+                        <span>
+                            <p>{{post.name}}</p>
+                        </span>
+                        <span>
+                            <p>{{post.price}} ₼</p>
+                        </span>
+                    </div>
+                    <div class="btns">
+                        <span>
+                            <a href="" class="btn"><i class="bi bi-cart-check"></i></a>
+                            <a href="{% url 'postpage' post.id %}" class="btn"><i class="bi bi-eye"></i></a>
+                            <a href="" class="btn"><i class="bi bi-heart-fill"></i></a>
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}

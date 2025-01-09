@@ -1,0 +1,75 @@
+{% load static %}
+<header>
+    <div class="float1">
+        <span>
+            <a href="{% url 'homepage' %}" class="logo">
+                <img src="{% static 'media/beelogo.png' %}" alt="">
+            </a>
+        </span>
+        <span>
+            <div class="category">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Çeşidlər</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Şüşə qablaşdırma</a></li>
+                        <li><a class="dropdown-item" href="#">Pətək balı</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search">
+                <form action="" method="post">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Məhul axtar..." aria-label="Məhul axtar..." aria-describedby="button-addon2">
+                        <button class="btn" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <div class="settings">
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-gear-wide-connected"></i></button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="modalBody">
+                                    <div class="lang">
+                                        <a href="" class="btn">Azərbaycanca</a>
+                                        <a href="" class="btn">English</a>
+                                        <a href="" class="btn">Русский</a>
+                                    </div>
+                                    <div class="mode">
+                                        <button class="btn">Gecə/Gündüz modu <i class="bi bi-cloud-moon-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="door">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="bi bi-door-open-fill"></i></button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="body">
+                            {% if request.user.is_authenticated %}
+                                <a href="" class="btn">Hesab <i class="bi bi-person"></i></a>
+                                <a href="" class="btn">Səbət <i class="bi bi-cart3"></i></a>
+                                <a href="" class="btn">Seçilmişlər <i class="bi bi-heart-fill"></i></a>
+                            {% else %}
+                                <a href="" class="btn">Daxil ol <i class="bi bi-person"></i></a>
+                            {% endif %}
+                            <a href="" class="btn">Haqımızda <i class="bi bi-info-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
+</header>

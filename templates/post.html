@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+    <main>
+        <div class="postPage">
+            <div class="float1">
+                <div class="left">
+                    <img src="{{object.img}}" alt="">
+                </div>
+                <div class="right">
+                    <h2>{{object.name}}</h2>
+                    <p>Şüşə qablaşdırma</p>
+                    <p>Qiymət: {{object.price}} ₼</p>
+                    <p>{{object.desc | safe}}</p>
+                    <div class="quantity">
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button">-</button>
+                            <input type="number" class="form-control" placeholder="1" min="1" aria-label="Example text with two button addons">
+                            <button class="btn btn-outline-secondary" type="button">+</button>
+                        </div>
+                    </div>
+                    <a href="" class="btn addToBasket">Səbətə əlavə et</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
