@@ -151,6 +151,16 @@ body main .postPage .float1 .left {
 body main .postPage .float1 .left img {
   width: 40vw;
 }
+body main .postPage .float1 .right .quantity {
+  margin: 1vw 0;
+}
+body main .postPage .float1 .right .quantity .input-group {
+  width: 11vw;
+}
+body main .postPage .float1 .right .addToBasket {
+  background-color: #F8AD2D;
+  color: white;
+}
 body main .blogHead {
   display: flex;
   justify-content: center;
